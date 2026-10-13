@@ -9,6 +9,9 @@
 <link rel="preconnect" href="https://tendercarelc.org">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="pages.css">
@@ -132,6 +135,43 @@
   <!-- ============================ ALL LOCATIONS ============================ -->
   <section class="section">
     <div class="shell">
+      <div class="location-finder" data-location-finder>
+        <aside class="location-finder__panel" aria-label="Choose a Tender Care location">
+          <div class="location-finder__heading">
+            <span class="location-finder__count">20 locations</span>
+            <h2>Find a center</h2>
+          </div>
+          <label class="location-search">
+            <span class="sr-only">Search locations</span>
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input type="search" placeholder="Search center, city, or ZIP" autocomplete="postal-code" data-location-search>
+            <button type="button" aria-label="Clear search" data-location-clear hidden><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+          </label>
+          <p class="location-finder__status" data-location-status aria-live="polite">Showing all 20 locations</p>
+          <div class="location-results" data-location-results></div>
+        </aside>
+
+        <div class="location-finder__visual">
+          <div class="location-map" id="locations-map" aria-label="Map showing Tender Care Learning Center locations"></div>
+          <article class="location-preview" data-location-preview aria-live="polite">
+            <img class="location-preview__image" data-location-image src="https://tendercarelc.org/wp-content/uploads/2023/09/bethel_park_front.jpg" alt="Tender Care Bethel Park">
+            <div class="location-preview__body">
+              <p class="location-preview__label">Selected center</p>
+              <h3 data-location-name>Bethel Park</h3>
+              <p data-location-address>5189 Library Road Bethel Park, PA 15102</p>
+              <div class="location-preview__actions">
+                <a class="btn btn--rose btn--sm" data-location-page href="locations/bethel-park.html">View center <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                <a class="btn btn--ghost btn--sm" data-location-directions href="https://www.google.com/maps/search/?api=1&amp;query=5189%20Library%20Road%20Bethel%20Park%2C%20PA%2015102" target="_blank" rel="noopener">Directions <i class="fa-solid fa-location-arrow" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+          <noscript><p class="location-map__fallback">Use the location cards below to view each center and open directions.</p></noscript>
+        </div>
+      </div>
+
+      <div class="location-grid-head">
+        <h2 class="h-sec">All locations</h2>
+      </div>
       <div class="locs">
         <a class="loc" href="locations/bethel-park.html">
           <div class="loc__media">
@@ -357,9 +397,7 @@
              alt="Tender Care Learning Centers — The Early Education Professionals" loading="lazy">
         <p class="footer__blurb">We have been educating children for over forty years. Our goal is to create learning environments that engage each child.</p>
         <div class="footer__social">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/company/tender-care-learning-ctrs" target="_blank" rel="noopener" aria-label="Tender Care Learning Centers on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
 
@@ -415,6 +453,9 @@
 
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js" defer></script>
+<script src="locations-map.js" defer></script>
 <script src="app.js" defer></script>
 
 </body>
