@@ -47,7 +47,7 @@
           <ul class="submenu">
             <li><a href="about.html">About Us</a></li>
             <li><a href="mission-vision.html">Mission &amp; Vision</a></li>
-            <li><a href="education.html">Our Approach</a></li>
+            <li><a href="education.html">Education</a></li>
             <li><a href="staff.html">Our Team</a></li>
           </ul>
         </li>
@@ -61,6 +61,9 @@
             <li><a href="video-gallery.html" aria-current="page">Video Gallery</a></li>
           </ul>
         </li>
+        <li class="nav__item"><a class="nav__link" href="careers.html">Careers</a></li>
+        <li class="nav__item"><a class="nav__link" href="https://www.jradspecstore.com/tendercarestore/default.aspx">Store</a></li>
+
       </ul>
     </nav>
 
@@ -94,7 +97,7 @@
       <a href="about.html">Why Tender Care</a>
       <div class="sub">
         <a href="mission-vision.html">Mission &amp; Vision</a>
-        <a href="education.html">Our Approach</a>
+        <a href="education.html">Education</a>
         <a href="staff.html">Our Team</a>
       </div>
       <a href="parent-handbook.html">For Families</a>
@@ -104,6 +107,8 @@
         <a href="photo-gallery.html">Photo Gallery</a>
         <a href="video-gallery.html" aria-current="page">Video Gallery</a>
       </div>
+      <a href="careers.html">Careers</a>
+      <a href="https://www.jradspecstore.com/tendercarestore/default.aspx">Store</a>
     </nav>
     <a class="btn btn--rose" href="enroll.html">Schedule a Tour</a>
   </div>
@@ -123,66 +128,98 @@
         </nav>
         <h1 class="phero__title">Video Gallery</h1>
       </div>
-      <div class="phero__art" aria-hidden="true">
-        <span class="phero__sun"></span>
-        <img class="phero__mascot" src="assets/bear.svg" alt="" width="255" height="433">
+      <div class="phero__art phero__art--photo" aria-hidden="true">
+        <img class="phero__photo" src="https://i.ytimg.com/vi/X9hJvYRpi-o/maxresdefault.jpg" alt="" style="object-position:30% center" fetchpriority="high">
       </div>
     </div>
   </section>
 
   <!-- ============================ PLAYER ============================ -->
-  <section class="section">
-    <div class="shell vgal">
-      <div class="vgal__player">
-        <div class="vgal__frame">
-          <iframe id="vplayer" src="https://www.youtube-nocookie.com/embed/v2sOr0K6R_o?rel=0" title="Take Five" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+  <section class="section vg-sec">
+    <div class="shell vg">
+      <div class="vg__main">
+        <div class="vg__stage" data-video-stage>
+          <img class="vg__poster" id="vposter" src="https://i.ytimg.com/vi/v2sOr0K6R_o/maxresdefault.jpg" alt="" loading="eager">
+          <button class="vg__play" id="vplay" type="button" aria-label="Play Take Five">
+            <span class="vg__play-btn"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
+          </button>
+          <iframe id="vplayer" title="Take Five" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen hidden></iframe>
+          <div class="vg__note" id="vnote" hidden>
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            <p>This video plays right here once the site is online. YouTube blocks playback when the page is opened as a file on your computer.</p>
+          </div>
         </div>
-        <h2 class="vgal__now" id="vtitle">Take Five</h2>
+        <div class="vg__info">
+          <p class="vg__count">Video <span id="vpos">1</span> of 9</p>
+          <h2 class="vg__title" id="vtitle">Take Five</h2>
+          <p class="vg__time" id="vtime"><i class="fa-regular fa-clock" aria-hidden="true"></i> <span>3:30</span></p>
+        </div>
       </div>
-      <div class="vgal__list">
-        <div class="vgal__head"><h2>Playlist</h2><span>9 Videos</span></div>
-        <ol class="vlist">
-          <li><a class="vitem" href="https://youtu.be/v2sOr0K6R_o" data-video="v2sOr0K6R_o" aria-current="true">
-            <span class="vitem__thumb"><img src="https://i.ytimg.com/vi/v2sOr0K6R_o/hqdefault.jpg" alt="" loading="lazy"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
-            <span class="vitem__text"><span class="vitem__title">Take Five</span><span class="vitem__time">3:30</span></span>
-          </a></li>
-          <li><a class="vitem" href="https://youtu.be/X9hJvYRpi-o" data-video="X9hJvYRpi-o">
-            <span class="vitem__thumb"><img src="https://i.ytimg.com/vi/X9hJvYRpi-o/hqdefault.jpg" alt="" loading="lazy"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
-            <span class="vitem__text"><span class="vitem__title">Working at Tender Care</span><span class="vitem__time">0:28</span></span>
-          </a></li>
-          <li><a class="vitem" href="https://youtu.be/3NVYyPSj2BU" data-video="3NVYyPSj2BU">
-            <span class="vitem__thumb"><img src="https://i.ytimg.com/vi/3NVYyPSj2BU/hqdefault.jpg" alt="" loading="lazy"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
-            <span class="vitem__text"><span class="vitem__title">Benefits of Working at Tender Care</span><span class="vitem__time">0:38</span></span>
-          </a></li>
-          <li><a class="vitem" href="https://youtu.be/B-l08L6cfkY" data-video="B-l08L6cfkY">
-            <span class="vitem__thumb"><img src="https://i.ytimg.com/vi/B-l08L6cfkY/hqdefault.jpg" alt="" loading="lazy"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
-            <span class="vitem__text"><span class="vitem__title">Loan Program</span><span class="vitem__time">0:39</span></span>
-          </a></li>
-          <li><a class="vitem" href="https://youtu.be/PoZSHSQequ0" data-video="PoZSHSQequ0">
-            <span class="vitem__thumb"><img src="https://i.ytimg.com/vi/PoZSHSQequ0/hqdefault.jpg" alt="" loading="lazy"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
-            <span class="vitem__text"><span class="vitem__title">Benefits with Teddy</span><span class="vitem__time">0:49</span></span>
-          </a></li>
-          <li><a class="vitem" href="https://youtu.be/Z9M_H9ju4SY" data-video="Z9M_H9ju4SY">
-            <span class="vitem__thumb"><img src="https://i.ytimg.com/vi/Z9M_H9ju4SY/hqdefault.jpg" alt="" loading="lazy"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
-            <span class="vitem__text"><span class="vitem__title">Career Opportunities</span><span class="vitem__time">0:48</span></span>
-          </a></li>
-          <li><a class="vitem" href="https://youtu.be/jVJ4wc_LeXw" data-video="jVJ4wc_LeXw">
-            <span class="vitem__thumb"><img src="https://i.ytimg.com/vi/jVJ4wc_LeXw/hqdefault.jpg" alt="" loading="lazy"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
-            <span class="vitem__text"><span class="vitem__title">Quality of Life Benefits</span><span class="vitem__time">0:34</span></span>
-          </a></li>
-          <li><a class="vitem" href="https://youtu.be/f3qrjawx6S4" data-video="f3qrjawx6S4">
-            <span class="vitem__thumb"><img src="https://tendercarelc.org/wp-content/uploads/2025/03/stem_thumbnail.webp" alt="" loading="lazy"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
-            <span class="vitem__text"><span class="vitem__title">Stem Steam</span></span>
-          </a></li>
-          <li><a class="vitem" href="https://youtu.be/L1mEevnPcU8" data-video="L1mEevnPcU8">
-            <span class="vitem__thumb"><img src="https://tendercarelc.org/wp-content/uploads/2025/03/nutrition_thumbnail.webp" alt="" loading="lazy"><i class="fa-solid fa-play" aria-hidden="true"></i></span>
-            <span class="vitem__text"><span class="vitem__title">Nutrition</span></span>
-          </a></li>
-        </ol>
+      <div class="vg__side">
+        <div class="vg__panel">
+          <div class="vg__head"><h2>Playlist</h2><span>9 videos</span></div>
+          <ol class="vg__list">
+            <li><button class="vg-item" type="button" data-video="v2sOr0K6R_o" data-poster="https://i.ytimg.com/vi/v2sOr0K6R_o/maxresdefault.jpg" data-time="3:30" aria-pressed="true">
+              <span class="vg-item__num">1</span>
+              <span class="vg-item__thumb"><img src="https://i.ytimg.com/vi/v2sOr0K6R_o/hqdefault.jpg" alt="" loading="lazy"><span class="vg-item__time">3:30</span></span>
+              <span class="vg-item__text"><span class="vg-item__title">Take Five</span><span class="vg-item__state">Selected</span></span>
+            </button></li>
+            <li><button class="vg-item" type="button" data-video="X9hJvYRpi-o" data-poster="https://i.ytimg.com/vi/X9hJvYRpi-o/maxresdefault.jpg" data-time="0:28" aria-pressed="false">
+              <span class="vg-item__num">2</span>
+              <span class="vg-item__thumb"><img src="https://i.ytimg.com/vi/X9hJvYRpi-o/hqdefault.jpg" alt="" loading="lazy"><span class="vg-item__time">0:28</span></span>
+              <span class="vg-item__text"><span class="vg-item__title">Working at Tender Care</span><span class="vg-item__state">Selected</span></span>
+            </button></li>
+            <li><button class="vg-item" type="button" data-video="3NVYyPSj2BU" data-poster="https://i.ytimg.com/vi/3NVYyPSj2BU/maxresdefault.jpg" data-time="0:38" aria-pressed="false">
+              <span class="vg-item__num">3</span>
+              <span class="vg-item__thumb"><img src="https://i.ytimg.com/vi/3NVYyPSj2BU/hqdefault.jpg" alt="" loading="lazy"><span class="vg-item__time">0:38</span></span>
+              <span class="vg-item__text"><span class="vg-item__title">Benefits of Working at Tender Care</span><span class="vg-item__state">Selected</span></span>
+            </button></li>
+            <li><button class="vg-item" type="button" data-video="B-l08L6cfkY" data-poster="https://i.ytimg.com/vi/B-l08L6cfkY/maxresdefault.jpg" data-time="0:39" aria-pressed="false">
+              <span class="vg-item__num">4</span>
+              <span class="vg-item__thumb"><img src="https://i.ytimg.com/vi/B-l08L6cfkY/hqdefault.jpg" alt="" loading="lazy"><span class="vg-item__time">0:39</span></span>
+              <span class="vg-item__text"><span class="vg-item__title">Loan Program</span><span class="vg-item__state">Selected</span></span>
+            </button></li>
+            <li><button class="vg-item" type="button" data-video="PoZSHSQequ0" data-poster="https://i.ytimg.com/vi/PoZSHSQequ0/maxresdefault.jpg" data-time="0:49" aria-pressed="false">
+              <span class="vg-item__num">5</span>
+              <span class="vg-item__thumb"><img src="https://i.ytimg.com/vi/PoZSHSQequ0/hqdefault.jpg" alt="" loading="lazy"><span class="vg-item__time">0:49</span></span>
+              <span class="vg-item__text"><span class="vg-item__title">Benefits with Teddy</span><span class="vg-item__state">Selected</span></span>
+            </button></li>
+            <li><button class="vg-item" type="button" data-video="Z9M_H9ju4SY" data-poster="https://i.ytimg.com/vi/Z9M_H9ju4SY/maxresdefault.jpg" data-time="0:48" aria-pressed="false">
+              <span class="vg-item__num">6</span>
+              <span class="vg-item__thumb"><img src="https://i.ytimg.com/vi/Z9M_H9ju4SY/hqdefault.jpg" alt="" loading="lazy"><span class="vg-item__time">0:48</span></span>
+              <span class="vg-item__text"><span class="vg-item__title">Career Opportunities</span><span class="vg-item__state">Selected</span></span>
+            </button></li>
+            <li><button class="vg-item" type="button" data-video="jVJ4wc_LeXw" data-poster="https://i.ytimg.com/vi/jVJ4wc_LeXw/maxresdefault.jpg" data-time="0:34" aria-pressed="false">
+              <span class="vg-item__num">7</span>
+              <span class="vg-item__thumb"><img src="https://i.ytimg.com/vi/jVJ4wc_LeXw/hqdefault.jpg" alt="" loading="lazy"><span class="vg-item__time">0:34</span></span>
+              <span class="vg-item__text"><span class="vg-item__title">Quality of Life Benefits</span><span class="vg-item__state">Selected</span></span>
+            </button></li>
+            <li><button class="vg-item" type="button" data-video="f3qrjawx6S4" data-poster="https://i.ytimg.com/vi/f3qrjawx6S4/sddefault.jpg" data-time="" aria-pressed="false">
+              <span class="vg-item__num">8</span>
+              <span class="vg-item__thumb"><img src="https://tendercarelc.org/wp-content/uploads/2025/03/stem_thumbnail.webp" alt="" loading="lazy"></span>
+              <span class="vg-item__text"><span class="vg-item__title">Stem Steam</span><span class="vg-item__state">Selected</span></span>
+            </button></li>
+            <li><button class="vg-item" type="button" data-video="L1mEevnPcU8" data-poster="https://i.ytimg.com/vi/L1mEevnPcU8/maxresdefault.jpg" data-time="" aria-pressed="false">
+              <span class="vg-item__num">9</span>
+              <span class="vg-item__thumb"><img src="https://tendercarelc.org/wp-content/uploads/2025/03/nutrition_thumbnail.webp" alt="" loading="lazy"></span>
+              <span class="vg-item__text"><span class="vg-item__title">Nutrition</span><span class="vg-item__state">Selected</span></span>
+            </button></li>
+          </ol>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ============================ SITE CTA ============================ -->
+  <section class="site-cta" aria-labelledby="site-cta-title">
+    <div class="shell">
+      <div class="site-cta__inner reveal">
+        <img class="site-cta__mascot" src="assets/bear.svg" alt="" width="255" height="433" loading="lazy">
+        <h2 id="site-cta-title">Ready to join us? Enroll now!</h2>
+        <a class="btn btn--yellow" href="https://tendercarelearningcenters.iks.center/contact-us">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- ============================ FOOTER ============================ -->
@@ -262,8 +299,7 @@
       </nav>
 
       <div class="footer__col footer__enroll">
-        <h4>Ready to join us?</h4>
-        <p>Enrollment is open at all 20 locations, 12 months per year.</p>
+        <h4>Ready to join us? Enroll now!</h4>
         <a class="btn btn--rose btn--sm" href="https://tendercarelearningcenters.iks.center/contact-us">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 

@@ -9,9 +9,6 @@
 <link rel="preconnect" href="https://tendercarelc.org">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.min.css">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="pages.css">
@@ -50,7 +47,7 @@
           <ul class="submenu">
             <li><a href="about.html">About Us</a></li>
             <li><a href="mission-vision.html">Mission &amp; Vision</a></li>
-            <li><a href="education.html">Our Approach</a></li>
+            <li><a href="education.html">Education</a></li>
             <li><a href="staff.html">Our Team</a></li>
           </ul>
         </li>
@@ -64,6 +61,9 @@
             <li><a href="video-gallery.html">Video Gallery</a></li>
           </ul>
         </li>
+        <li class="nav__item"><a class="nav__link" href="careers.html">Careers</a></li>
+        <li class="nav__item"><a class="nav__link" href="https://www.jradspecstore.com/tendercarestore/default.aspx">Store</a></li>
+
       </ul>
     </nav>
 
@@ -97,7 +97,7 @@
       <a href="about.html">Why Tender Care</a>
       <div class="sub">
         <a href="mission-vision.html">Mission &amp; Vision</a>
-        <a href="education.html">Our Approach</a>
+        <a href="education.html">Education</a>
         <a href="staff.html">Our Team</a>
       </div>
       <a href="parent-handbook.html">For Families</a>
@@ -107,6 +107,8 @@
         <a href="photo-gallery.html">Photo Gallery</a>
         <a href="video-gallery.html">Video Gallery</a>
       </div>
+      <a href="careers.html">Careers</a>
+      <a href="https://www.jradspecstore.com/tendercarestore/default.aspx">Store</a>
     </nav>
     <a class="btn btn--rose" href="enroll.html">Schedule a Tour</a>
   </div>
@@ -114,60 +116,67 @@
 
 <main id="main">
 
-  <!-- ============================ PAGE TITLE ============================ -->
-  <section class="phero">
-    <div class="shell phero__inner">
-      <div class="phero__copy">
-        <nav class="crumbs" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
-          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-          <span aria-current="page">Locations</span>
-        </nav>
-        <h1 class="phero__title">Locations</h1>
-      </div>
-      <div class="phero__art" aria-hidden="true">
-        <span class="phero__sun"></span>
-        <img class="phero__mascot" src="assets/bear.svg" alt="" width="255" height="433">
-      </div>
-    </div>
-  </section>
-
   <!-- ============================ ALL LOCATIONS ============================ -->
-  <section class="section">
+  <section class="section section--finder">
     <div class="shell">
-      <div class="location-finder" data-location-finder>
-        <aside class="location-finder__panel" aria-label="Choose a Tender Care location">
-          <div class="location-finder__heading">
-            <span class="location-finder__count">20 locations</span>
-            <h2>Find a center</h2>
+      <header class="location-intro">
+        <p class="location-intro__eyebrow">20 locations</p>
+        <h1>Find a Tender Care Learning Center near you.</h1>
+      </header>
+      <div class="tc-finder" data-location-finder data-view="list">
+        <div class="tc-map" data-map tabindex="0" role="region" aria-label="Map of Tender Care Learning Center locations. Use arrow keys to pan and plus or minus to zoom.">
+          <svg class="tc-map__svg" data-map-svg aria-hidden="true" focusable="false"></svg>
+          <div class="tc-map__labels" data-map-labels></div>
+          <div class="tc-map__markers" data-map-markers></div>
+          <div class="tc-map__controls">
+            <button type="button" data-map-zoom-in aria-label="Zoom in"><i class="fa-solid fa-plus" aria-hidden="true"></i></button>
+            <button type="button" data-map-zoom-out aria-label="Zoom out"><i class="fa-solid fa-minus" aria-hidden="true"></i></button>
+            <button type="button" data-map-reset aria-label="Show all centers"><i class="fa-solid fa-expand" aria-hidden="true"></i></button>
           </div>
-          <label class="location-search">
-            <span class="sr-only">Search locations</span>
-            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-            <input type="search" placeholder="Search center, city, or ZIP" autocomplete="postal-code" data-location-search>
-            <button type="button" aria-label="Clear search" data-location-clear hidden><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-          </label>
-          <p class="location-finder__status" data-location-status aria-live="polite">Showing all 20 locations</p>
-          <div class="location-results" data-location-results></div>
-        </aside>
-
-        <div class="location-finder__visual">
-          <div class="location-map" id="locations-map" aria-label="Map showing Tender Care Learning Center locations"></div>
-          <article class="location-preview" data-location-preview aria-live="polite">
-            <img class="location-preview__image" data-location-image src="https://tendercarelc.org/wp-content/uploads/2023/09/bethel_park_front.jpg" alt="Tender Care Bethel Park">
-            <div class="location-preview__body">
-              <p class="location-preview__label">Selected center</p>
+          <article class="tc-pop" data-location-preview hidden aria-live="polite">
+            <button type="button" class="tc-pop__close" data-location-close aria-label="Close center details"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+            <img class="tc-pop__image" data-location-image src="https://tendercarelc.org/wp-content/uploads/2023/09/bethel_park_front.jpg" alt="">
+            <div class="tc-pop__body">
               <h3 data-location-name>Bethel Park</h3>
               <p data-location-address>5189 Library Road Bethel Park, PA 15102</p>
-              <div class="location-preview__actions">
+              <a class="tc-pop__phone" data-location-phone href="tel:+14128876642">(412) 887-6642</a>
+              <div class="tc-pop__actions">
                 <a class="btn btn--rose btn--sm" data-location-page href="locations/bethel-park.html">View center <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
-                <a class="btn btn--ghost btn--sm" data-location-directions href="https://www.google.com/maps/search/?api=1&amp;query=5189%20Library%20Road%20Bethel%20Park%2C%20PA%2015102" target="_blank" rel="noopener">Directions <i class="fa-solid fa-location-arrow" aria-hidden="true"></i></a>
+                <a class="tc-pop__directions" data-location-directions href="https://www.google.com/maps/search/?api=1&amp;query=5189%20Library%20Road%20Bethel%20Park%2C%20PA%2015102" target="_blank" rel="noopener">Directions <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i></a>
               </div>
             </div>
           </article>
-          <noscript><p class="location-map__fallback">Use the location cards below to view each center and open directions.</p></noscript>
         </div>
+
+        <aside class="tc-panel" data-location-panel aria-label="Choose a Tender Care location">
+          <div class="tc-panel__head">
+            <nav class="crumbs tc-panel__crumbs" aria-label="Breadcrumb">
+              <a href="index.html">Home</a>
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+              <span aria-current="page">Locations</span>
+            </nav>
+            <h2>Find a center</h2>
+            <div class="tc-panel__search">
+              <label class="location-search">
+                <span class="sr-only">Search by center, city, or ZIP code</span>
+                <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                <input type="search" placeholder="Center, city, or ZIP" autocomplete="off" data-location-search>
+                <button type="button" aria-label="Clear search" data-location-clear hidden><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+              </label>
+              <button type="button" class="tc-near" data-location-near><i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i> Near me</button>
+            </div>
+          </div>
+          <div class="tc-panel__meta">
+            <p data-location-status aria-live="polite"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 20 centers</p>
+            <div class="tc-view" role="group" aria-label="Display">
+              <button type="button" data-location-view="list" aria-pressed="true"><i class="fa-solid fa-list" aria-hidden="true"></i> List</button>
+              <button type="button" data-location-view="map" aria-pressed="false"><i class="fa-solid fa-map" aria-hidden="true"></i> Map</button>
+            </div>
+          </div>
+          <div class="tc-results" data-location-results></div>
+        </aside>
       </div>
+      <noscript><p class="location-map__fallback">Use the location cards below to view each center and open directions.</p></noscript>
 
       <div class="location-grid-head">
         <h2 class="h-sec">All locations</h2>
@@ -176,6 +185,17 @@
         <a class="loc" href="locations/bethel-park.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/09/bethel_park_front.jpg" alt="Tender Care Bethel Park" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 8<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Bethel Park</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>8 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Bethel Park</h2>
@@ -185,6 +205,17 @@
         <a class="loc" href="locations/cranberry.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/10/Attachment-2-1024x768.jpg" alt="Tender Care Cranberry" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 9<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Cranberry</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>9 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Cranberry</h2>
@@ -194,6 +225,17 @@
         <a class="loc" href="locations/green-tree.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/07/greentree_front-1024x768.jpg" alt="Tender Care Green Tree" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 9<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Green Tree</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>9 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Green Tree</h2>
@@ -203,6 +245,17 @@
         <a class="loc" href="locations/hampton.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/08/IMG-6117-1-1024x768.jpeg" alt="Tender Care Hampton" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 8<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Hampton</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>8 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Hampton</h2>
@@ -212,6 +265,17 @@
         <a class="loc" href="locations/hermitage.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/03/IMG_3175-e1679677128689.jpg" alt="Tender Care Hermitage" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 8<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Hermitage</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>8 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Hermitage</h2>
@@ -221,6 +285,17 @@
         <a class="loc" href="locations/jefferson.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/07/jefferson_front-1024x768.jpg" alt="Tender Care Jefferson" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 10<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Jefferson</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>10 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Jefferson</h2>
@@ -230,6 +305,17 @@
         <a class="loc" href="locations/lower-burrell.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/08/IMG_5549-1024x768.jpeg" alt="Tender Care Lower Burrell" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 8<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Lower Burrell</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>8 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Lower Burrell</h2>
@@ -239,6 +325,17 @@
         <a class="loc" href="locations/mccandless.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2026/02/IMG_5312-1024x768.jpeg" alt="Tender Care McCandless" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 3<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">McCandless</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>3 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">McCandless</h2>
@@ -248,6 +345,17 @@
         <a class="loc" href="locations/meadowlands.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/08/meadowlands_exterior-1024x768.jpg" alt="Tender Care Meadowlands" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 12<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Meadowlands</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>12 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Meadowlands</h2>
@@ -257,6 +365,17 @@
         <a class="loc" href="locations/monroeville.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/08/IMG_5540-1024x768.jpeg" alt="Tender Care Monroeville" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 10<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Monroeville</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>10 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Monroeville</h2>
@@ -266,6 +385,17 @@
         <a class="loc" href="locations/moon-township.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2025/02/IMG_6682-1024x768.jpeg" alt="Tender Care Moon Township" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 9<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Moon Township</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>9 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Moon Township</h2>
@@ -275,6 +405,17 @@
         <a class="loc" href="locations/mt-lebanon.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/10/IMG_6714-1024x768.jpg" alt="Tender Care Mt. Lebanon" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 13<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Mt. Lebanon</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>13 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Mt. Lebanon</h2>
@@ -284,6 +425,17 @@
         <a class="loc" href="locations/murrysville.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/08/murrysville_exterior-1-1024x768.jpg" alt="Tender Care Murrysville" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 10<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Murrysville</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>10 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Murrysville</h2>
@@ -293,6 +445,17 @@
         <a class="loc" href="locations/new-castle.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/10/NEW-Front-of-Building-2-1024x768.jpg" alt="Tender Care New Castle" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 13<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">New Castle</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>13 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">New Castle</h2>
@@ -302,6 +465,17 @@
         <a class="loc" href="locations/pierpont.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/10/DSC_0098-1024x768.jpg" alt="Tender Care Pierpont" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 14<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Pierpont</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>14 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Pierpont</h2>
@@ -311,6 +485,17 @@
         <a class="loc" href="locations/robinson.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/08/IMG-4892-1024x768.jpg" alt="Tender Care Robinson" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 7<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Robinson</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>7 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Robinson</h2>
@@ -320,6 +505,17 @@
         <a class="loc" href="locations/ross-township.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/07/IMG_6399.jpg" alt="Tender Care Ross Township" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 18<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Ross Township</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>18 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Ross Township</h2>
@@ -329,6 +525,17 @@
         <a class="loc" href="locations/shadyside.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2026/05/Shadyside-pic-for-website.png" alt="Tender Care Shadyside" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 7<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Shadyside</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>7 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Shadyside</h2>
@@ -338,6 +545,17 @@
         <a class="loc" href="locations/wexford.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/08/Attachment-7-1024x768.jpg" alt="Tender Care Wexford" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 17<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Wexford</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>17 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Wexford</h2>
@@ -347,6 +565,17 @@
         <a class="loc" href="locations/whitehall.html">
           <div class="loc__media">
             <img src="https://tendercarelc.org/wp-content/uploads/2023/03/IMG_7205.jpg" alt="Tender Care Whitehall" loading="lazy">
+            <span class="loc__count"><i class="fa-solid fa-camera" aria-hidden="true"></i> 10<span class="loc__sr"> photos</span></span>
+            <div class="loc__peek" aria-hidden="true">
+              <p class="loc__peek-title">Inside this center page</p>
+              <p class="loc__peek-name">Whitehall</p>
+              <ul class="loc__chips">
+                <li><i class="fa-solid fa-camera"></i>10 photos</li>
+                <li><i class="fa-solid fa-map-location-dot"></i>Map &amp; address</li>
+                <li><i class="fa-solid fa-user"></i>Director</li>
+              </ul>
+              <span class="loc__cta">View center <i class="fa-solid fa-arrow-right"></i></span>
+            </div>
           </div>
           <div class="loc__body">
             <h2 class="loc__name">Whitehall</h2>
@@ -357,6 +586,17 @@
     </div>
   </section>
 
+
+  <!-- ============================ SITE CTA ============================ -->
+  <section class="site-cta" aria-labelledby="site-cta-title">
+    <div class="shell">
+      <div class="site-cta__inner reveal">
+        <img class="site-cta__mascot" src="assets/bear.svg" alt="" width="255" height="433" loading="lazy">
+        <h2 id="site-cta-title">Ready to enroll your child? Fill out the inquiry form below!</h2>
+        <a class="btn btn--yellow" href="https://tendercarelearningcenters.iks.center/contact-us">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- ============================ FOOTER ============================ -->
@@ -436,8 +676,7 @@
       </nav>
 
       <div class="footer__col footer__enroll">
-        <h4>Ready to join us?</h4>
-        <p>Enrollment is open at all 20 locations, 12 months per year.</p>
+        <h4>Ready to join us? Enroll now!</h4>
         <a class="btn btn--rose btn--sm" href="https://tendercarelearningcenters.iks.center/contact-us">Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
       </div>
 
@@ -453,8 +692,6 @@
 
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js" defer></script>
 <script src="locations-map.js" defer></script>
 <script src="app.js" defer></script>
 
